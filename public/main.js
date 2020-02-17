@@ -1,3 +1,6 @@
+//initialises socket io
+const socket = io();
+
 const cellElements = document.querySelectorAll('[data-cell]');
 const board = document.getElementById('board');
 
@@ -103,3 +106,8 @@ function checkWin(currentClass){
         })
     })
 }
+
+
+socket.on('message', function(data){
+    console.log(data);
+});
